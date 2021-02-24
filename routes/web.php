@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/tutors');
 });
 
-Route::get('/prueba', function () {
-    return "prueba";
-});
+Route::resource('tutors', TutorsController::class);
 
