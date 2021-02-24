@@ -1,6 +1,8 @@
 @extends('base')
 
 @section('main')
+<form method="post">
+    @csrf
     <fieldset class="border mt-5 p-2">
         <legend>Tutores</legend>
         <div class="row align-items-start">
@@ -12,21 +14,21 @@
             <div class="col-3 form-group">
                 <label for="documentType">Tipo de documento</label>
                 <select class="form-control" id="documentType">
-                    <option>NIE</option>
-                    <option>DNI</option>
-                    <option>OTROS</option>
+                    <option value="nie" @if (old('status') === 'nie') selected @endif>NIE</option>
+                    <option value="dni" @if (old('status') === 'dni') selected @endif>DNI</option>
+                    <option value="otros" @if (old('status') === 'otros') selected @endif>OTROS</option>
                 </select>
             </div>
 
             <div class="mb-3 col-3 form-group">
                 <label for="document" class="form-label">Documento</label>
-                <input class="form-control" name="document" value="{{old('nif_coordinador_fct')}}" id="document">
+                <input class="form-control" name="document" value="{{old('document')}}" id="document">
             </div>
         </div>
         <div class="row align-items-start">
             <div class="mb-3 col-6">
                 <label for="name" class="form-label">Nombre</label>
-                <input class="form-control" name="name" value="{{old('nombre_tutor_emp')}}" id="name" >
+                <input class="form-control" name="name" value="{{old('name')}}" id="name" >
             </div>
 
             <div class="mb-3 col-3">
@@ -59,8 +61,8 @@
             <div class="col-3 form-group">
                 <label for="status">Estado</label>
                 <select class="form-control" id="status">
-                    <option>Activo</option>
-                    <option>Inactivo</option>
+                    <option value="active" @if (old('status') === 'active') selected @endif>Activo</option>
+                    <option value="inactive" @if (old('status') === 'inactive') selected @endif>Inactivo</option>
                 </select>
             </div>
             <div class="mb-3 col-6 form-group">
@@ -74,4 +76,6 @@
             </div>
         </div> 
     </fieldset>
+    <button type="submit" class="btn btn-primary mt-3">Guardar</button>
+</form>
 @endsection
