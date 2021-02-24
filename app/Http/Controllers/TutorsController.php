@@ -54,7 +54,7 @@ class TutorsController extends Controller
             'email' => $request->get('email'),
         ]);
         $tutor->save();
-        // return redirect('/tutors')->with('success', 'Tutor saved!');
+        return view('tutores');
     }
 
     /**
