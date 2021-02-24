@@ -11,6 +11,14 @@
 </head>
 <body>
   <div class="container">
+    <div class="row align-items-start">
+      <div class="mb-3 col-6">
+        <a href="{{ url('locale/en') }}" ><i class="fa fa-language"></i> EN</a>
+      </div>
+      <div class="mb-3 col-6">
+        <a href="{{ url('locale/es') }}" ><i class="fa fa-language"></i> ES</a>
+      </div>
+    </div>
     @yield('main')
   </div>
   <script src="{{ asset('js/app.js') }}" type="text/js"></script>

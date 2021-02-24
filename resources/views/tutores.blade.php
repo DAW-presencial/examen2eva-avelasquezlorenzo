@@ -85,13 +85,13 @@
                 {!!$errors->first('status', '<small class="text-danger">:message</small></br>')!!}
             </div>
             <div class="mb-3 col-6 form-group">
-                <label for="phone" class="form-label">{{__('tutors.phone')}}</label>
+                <label for="phone" class="form-label">@lang('tutors.phone')</label>
                 <input class="form-control" name="phone" value="{{old('phone')}}" id="phone" required>
                 {!!$errors->first('phone', '<small class="text-danger">:message</small></br>')!!}
             </div>
 
             <div class="mb-3 col-3 form-group">
-                <label for="email" class="form-label">{{__('tutors.email')}}</label>
+                <label for="email" class="form-label">@lang('tutors.email')</label>
                 <input class="form-control" name="email" value="{{old('email')}}" id="email" required>
                 {!!$errors->first('email', '<small class="text-danger">:message</small></br>')!!}
             </div>

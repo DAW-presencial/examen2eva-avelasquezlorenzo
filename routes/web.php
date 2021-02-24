@@ -17,5 +17,10 @@ Route::get('/', function () {
     return redirect('/tutors');
 });
 
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
 Route::resource('tutors', TutorsController::class);
 
